@@ -2,7 +2,7 @@
   <section id="work" class="w-full mb-8">
     <div class="mx-auto w-full max-w-2xl flex min-h-0 flex-col gap-y-3">
       <div class="mb-1">
-        <h2 class="text-xl font-bold">Work Experience</h2>
+        <h2 class="text-xl font-bold">Education</h2>
       </div>
 
       <div v-for="work in works" class="-mt-1 mb-2" >
@@ -48,12 +48,20 @@ export interface Work {
 
 const works = ref<Work[]>([
   {
-    title: "Veolia Eau",
-    subtitle: "Full Stack & RPA Developer",
-    compagny: "Veolia",
-    website: "https://www.veolia.com",
-    logo: new URL('../assets/veolia.png', import.meta.url).href,
-    date: "Apr 2025 - Present",
+    title: "IUT of Littoral Côte d'Opale",
+    subtitle: "BUT Computer Science",
+    compagny: "IUT of Littoral Côte d'Opale",
+    website: "https://www.iut-littoral.fr",
+    logo: new URL('../assets/iut.png', import.meta.url).href,
+    date: "Sep 2023 - Present",
+  },
+  {
+    title: "University of Littoral Côte d'Opale",
+    subtitle: "License Mathematics & Computer Science",
+    compagny: "University of Littoral Côte d'Opale",
+    website: "https://www.univ-littoral.fr",
+    logo: new URL('../assets/ulco.png', import.meta.url).href,
+    date: "Sep 2022 - Jun 2023",
   }
 ])
 
