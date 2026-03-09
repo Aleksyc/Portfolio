@@ -2,7 +2,7 @@
   <section id="work" class="w-full mb-8">
     <div class="mx-auto w-full max-w-2xl flex min-h-0 flex-col gap-y-3">
       <div class="mb-1">
-        <h2 class="text-xl font-bold">Education</h2>
+        <h2 class="text-xl font-bold">{{ t('education.title') }}</h2>
       </div>
 
       <div v-for="(work, index) in works" :key="work.title" class="-mt-1 mb-2">
@@ -53,7 +53,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 export interface Work {
   title: string;
@@ -66,29 +67,30 @@ export interface Work {
 }
 
 const expandedWork = ref<number | null>(null)
+const { t } = useI18n()
 
 const toggleWork = (index: number) => {
   expandedWork.value = expandedWork.value === index ? null : index
 }
 
-const works = ref<Work[]>([
+const works = computed<Work[]>(() => [
   {
-    title: "IUT of Littoral Côte d'Opale",
-    subtitle: "BUT Computer Science",
+    title: t('education.items.iut.title'),
+    subtitle: t('education.items.iut.subtitle'),
     compagny: "IUT of Littoral Côte d'Opale",
     website: "https://www.iut-littoral.fr",
-    logo: new URL('../assets/iut.png', import.meta.url).href,
-    date: "Sep 2023 - Present",
+    logo: new URL('../assets/logo.png', import.meta.url).href,
+    date: t('education.items.iut.date'),
     details: [
     ],
   },
   {
-    title: "University of Littoral Côte d'Opale",
-    subtitle: "License Mathematics & Computer Science",
+    title: t('education.items.ulco.title'),
+    subtitle: t('education.items.ulco.subtitle'),
     compagny: "University of Littoral Côte d'Opale",
     website: "https://www.univ-littoral.fr",
     logo: new URL('../assets/ulco.png', import.meta.url).href,
-    date: "Sep 2022 - Jun 2023",
+    date: t('education.items.ulco.date'),
     details: [
     ],
   }

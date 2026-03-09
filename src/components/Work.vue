@@ -2,7 +2,7 @@
   <section id="work" class="w-full mb-8">
     <div class="mx-auto w-full max-w-2xl flex min-h-0 flex-col gap-y-3">
       <div class="mb-1">
-        <h2 class="text-xl font-bold">Work Experience</h2>
+        <h2 class="text-xl font-bold">{{ t('work.title') }}</h2>
       </div>
 
       <div v-for="(work, index) in works" :key="work.title" class="-mt-1 mb-2">
@@ -53,7 +53,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 export interface Work {
   title: string;
@@ -66,22 +67,24 @@ export interface Work {
 }
 
 const expandedWork = ref<number | null>(null)
+const { t } = useI18n()
 
 const toggleWork = (index: number) => {
   expandedWork.value = expandedWork.value === index ? null : index
 }
 
-const works = ref<Work[]>([
+const works = computed<Work[]>(() => [
   {
-    title: "Veolia Eau",
-    subtitle: "Full Stack & RPA Developer",
-    compagny: "Veolia",
-    website: "https://www.veolia.com",
+    title: t('work.items.veolia.title'),
+    subtitle: t('work.items.veolia.subtitle'),
+    compagny: 'Veolia',
+    website: 'https://www.veolia.com',
     logo: new URL('../assets/veolia.png', import.meta.url).href,
-    date: "Apr 2025 - Present",
+    date: t('work.items.veolia.date'),
     details: [
-
-    ],
+      t('work.items.veolia.details.0'),
+      t('work.items.veolia.details.1')
+    ]
   }
 ])
 

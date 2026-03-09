@@ -2,27 +2,27 @@
   <section id="work" class="w-full mb-8">
     <div class="mx-auto w-full max-w-2xl flex min-h-0 flex-col gap-y-3">
       <div class="mb-1">
-        <h2 class="text-xl font-bold">Skills</h2>
+        <h2 class="text-xl font-bold">{{ t('skills.title') }}</h2>
       </div>
     </div>
 
     <div class="flex flex-wrap justify-center gap-3 mt-4">
       <label class="cursor-pointer">
-      <input type="radio" name="skill-category" value="Frontend" class="sr-only peer" v-model="selectedCategory">
+      <input type="radio" name="skill-category" value="frontend" class="sr-only peer" v-model="selectedCategory">
       <span class="inline-flex items-center justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring border border-input bg-background shadow-sm h-8 rounded-md text-xs px-4 py-2 hover:bg-black/10 peer-checked:bg-black peer-checked:text-white peer-checked:border-black peer-checked:hover:bg-black">
-        Frontend
+        {{ t('skills.categories.frontend') }}
       </span>
       </label>
       <label class="cursor-pointer">
-      <input type="radio" name="skill-category" value="Backend" class="sr-only peer" v-model="selectedCategory">
+      <input type="radio" name="skill-category" value="backend" class="sr-only peer" v-model="selectedCategory">
       <span class="inline-flex items-center justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring border border-input bg-background shadow-sm h-8 rounded-md text-xs px-4 py-2 hover:bg-black/10 peer-checked:bg-black peer-checked:text-white peer-checked:border-black peer-checked:hover:bg-black">
-        Backend
+        {{ t('skills.categories.backend') }}
       </span>
       </label>
       <label class="cursor-pointer">
-      <input type="radio" name="skill-category" value="Other" class="sr-only peer" v-model="selectedCategory">
+      <input type="radio" name="skill-category" value="other" class="sr-only peer" v-model="selectedCategory">
       <span class="inline-flex items-center justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring border border-input bg-background shadow-sm h-8 rounded-md text-xs px-4 py-2 hover:bg-black/10 peer-checked:bg-black peer-checked:text-white peer-checked:border-black peer-checked:hover:bg-black">
-        Other
+        {{ t('skills.categories.other') }}
       </span>
       </label>
     </div>
@@ -44,6 +44,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 export interface Skill {
   category: string;
@@ -51,23 +52,25 @@ export interface Skill {
   image: string;
 }
 
-const selectedCategory = ref('Frontend')
+const { t } = useI18n()
+
+const selectedCategory = ref('frontend')
 const skills = ref<Skill[]>([
-  { name: "HTML5", category: "Frontend", image: new URL('../assets/technology/html5.png', import.meta.url).href },
-  { name: "CSS3", category: "Frontend", image: new URL('../assets/technology/css3.png', import.meta.url).href },
-  { name: "Tailwind CSS", category: "Frontend", image: new URL('../assets/technology/tailwindcss.png', import.meta.url).href },
-  { name: "Vue.js", category: "Frontend", image: new URL('../assets/technology/vue.png', import.meta.url).href },
-  { name: "Angular", category: "Frontend", image: new URL('../assets/technology/angular.png', import.meta.url).href },
-  { name: "Typescript", category: "Frontend", image: new URL('../assets/technology/typescript.png', import.meta.url).href },
-  { name: "Node.js", category: "Backend", image: new URL('../assets/technology/nodejs.png', import.meta.url).href },
-  { name: "FastAPI", category: "Backend", image: new URL('../assets/technology/fastapi.png', import.meta.url).href },
-  { name: "PHP", category: "Backend", image: new URL('../assets/technology/php.png', import.meta.url).href },
-  { name: "API REST", category: "Backend", image: new URL('../assets/technology/apirest.png', import.meta.url).href },
-  { name: "Python", category: "Backend", image: new URL('../assets/technology/python.png', import.meta.url).href },
-  { name: "SQL", category: "Backend", image: new URL('../assets/technology/sql.png', import.meta.url).href },
-  { name: "PostgreSQL", category: "Backend", image: new URL('../assets/technology/postgresql.png', import.meta.url).href },
-  { name: "Automation Anywhere", category: "Other", image: new URL('../assets/technology/automationanywhere.png', import.meta.url).href },
-  { name: "Apps Script", category: "Other", image: new URL('../assets/technology/appsscript.png', import.meta.url).href },
+  { name: "HTML5", category: "frontend", image: new URL('../assets/technology/html5.png', import.meta.url).href },
+  { name: "CSS3", category: "frontend", image: new URL('../assets/technology/css3.png', import.meta.url).href },
+  { name: "Tailwind CSS", category: "frontend", image: new URL('../assets/technology/tailwindcss.png', import.meta.url).href },
+  { name: "Vue.js", category: "frontend", image: new URL('../assets/technology/vue.png', import.meta.url).href },
+  { name: "Angular", category: "frontend", image: new URL('../assets/technology/angular.png', import.meta.url).href },
+  { name: "Typescript", category: "frontend", image: new URL('../assets/technology/typescript.png', import.meta.url).href },
+  { name: "Node.js", category: "backend", image: new URL('../assets/technology/nodejs.png', import.meta.url).href },
+  { name: "FastAPI", category: "backend", image: new URL('../assets/technology/fastapi.png', import.meta.url).href },
+  { name: "PHP", category: "backend", image: new URL('../assets/technology/php.png', import.meta.url).href },
+  { name: "API REST", category: "backend", image: new URL('../assets/technology/apirest.png', import.meta.url).href },
+  { name: "Python", category: "backend", image: new URL('../assets/technology/python.png', import.meta.url).href },
+  { name: "SQL", category: "backend", image: new URL('../assets/technology/sql.png', import.meta.url).href },
+  { name: "PostgreSQL", category: "backend", image: new URL('../assets/technology/postgresql.png', import.meta.url).href },
+  { name: "Automation Anywhere", category: "other", image: new URL('../assets/technology/automationanywhere.png', import.meta.url).href },
+  { name: "Apps Script", category: "other", image: new URL('../assets/technology/appsscript.png', import.meta.url).href },
 ])
 
 </script>

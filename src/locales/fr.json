@@ -1,0 +1,44 @@
+{
+  "hero": {
+    "greeting": "Salut c'est Alexis 👋",
+    "description": "Développeur Full Stack chez Veolia. Je crée des applications web, des API et des solutions."
+  },
+  "work": {
+    "title": "Expérience professionnelle",
+    "items": {
+      "veolia": {
+        "title": "Veolia Eau",
+        "subtitle": "Développeur Full Stack & RPA",
+        "date": "Avr 2025 - Aujourd'hui",
+        "details": [
+          "Développement de robots logiciels (RPA) avec Automation Anywhere pour automatiser les tâches comptables.",
+          "Développement full-stack d'une application web avec Angular et une API Node.js pour gérer et superviser les processus RPA.",
+          ""
+        ]
+      }
+    }
+  },
+  "education": {
+    "title": "Formation",
+    "items": {
+      "iut": {
+        "title": "IUT du Littoral Côte d'Opale",
+        "subtitle": "BUT Informatique",
+        "date": "Sep 2023 - Aujourd'hui"
+      },
+      "ulco": {
+        "title": "Université du Littoral Côte d'Opale",
+        "subtitle": "Licence Mathématiques & Informatique",
+        "date": "Sep 2022 - Juin 2023"
+      }
+    }
+  },
+  "skills": {
+    "title": "Compétences",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "other": "Autres"
+    }
+  }
+}

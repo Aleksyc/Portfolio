@@ -5,15 +5,22 @@
         <div class="flex flex-1 flex-col space-y-1.5">
           <div class="flex">
             <span class="mb-2 inline-block text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl">
-              Hi, I'm Alexis 👋
+              {{ t('hero.greeting') }}
             </span>
           </div>
           <div class="flex">
             <span class="inline-block max-w-[600px] md:text-xl">
-              Full Stack Developer at Veolia. I build web applications, APIs, and automation solutions.
+              {{ t('hero.description') }}
             </span>
           </div>
           <div class="flex flex-wrap gap-3 pt-2">
+            <button
+              type="button"
+              @click="toggleLang"
+              class="inline-flex items-center gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-black/10"
+            >
+              {{ locale.startsWith('fr') ? '🍵 EN' : '🗼 FR' }}
+            </button>
             <a
               href="https://github.com/Aleksyc"
               target="_blank"
@@ -59,3 +66,13 @@
     </div>
   </section>
 </template>
+
+<script setup>
+import { useI18n } from 'vue-i18n'
+
+const { t, locale } = useI18n()
+
+function toggleLang() {
+  locale.value = locale.value.startsWith('fr') ? 'en' : 'fr'
+}
+</script>
