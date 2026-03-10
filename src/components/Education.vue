@@ -6,7 +6,11 @@
       </div>
 
       <div v-for="(work, index) in works" :key="work.title" class="-mt-1 mb-2">
-        <div class="block cursor-pointer" @click="toggleWork(index)">
+        <div
+          class="block"
+          :class="work.expandable ? 'cursor-pointer' : 'cursor-default'"
+          @click="work.expandable && toggleWork(index)"
+        >
           <div class="rounded-lg bg-card text-card-foreground flex">
             <div class="flex-none">
               <span class="relative flex shrink-0 overflow-hidden rounded-full size-12 m-auto bg-muted-background dark:bg-foreground">
@@ -19,6 +23,7 @@
                   <h3 class="inline-flex items-center justify-center font-semibold leading-none text-xs sm:text-sm">
                     {{work.title}}
                     <svg
+                      v-if="work.expandable"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"
@@ -42,7 +47,7 @@
           </div>
         </div>
         <ul
-          v-if="expandedWork === index"
+          v-if="work.expandable && expandedWork === index"
           class="mt-2 ml-16 list-disc text-xs sm:text-sm text-muted-foreground space-y-1"
         >
           <li v-for="detail in work.details" :key="detail">{{ detail }}</li>
@@ -64,6 +69,7 @@ export interface Work {
   logo: string;
   date: string;
   details: string[];
+  expandable?: boolean;
 }
 
 const expandedWork = ref<number | null>(null)
@@ -79,10 +85,15 @@ const works = computed<Work[]>(() => [
     subtitle: t('education.items.iut.subtitle'),
     compagny: "IUT of Littoral Côte d'Opale",
     website: "https://www.iut-littoral.fr",
-    logo: new URL('../assets/logo.png', import.meta.url).href,
+    logo: new URL('../assets/iut.png', import.meta.url).href,
     date: t('education.items.iut.date'),
     details: [
+      t('education.items.iut.details.0'),
+      t('education.items.iut.details.1'),
+      t('education.items.iut.details.2'),
+      t('education.items.iut.details.3'),
     ],
+    expandable: true,
   },
   {
     title: t('education.items.ulco.title'),
@@ -93,6 +104,7 @@ const works = computed<Work[]>(() => [
     date: t('education.items.ulco.date'),
     details: [
     ],
+    expandable: false,
   }
 ])
 

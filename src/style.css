@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+:root {
+	--selection-bg: #dbcfca;
+	--selection-text: #111827;
+}
+
+::selection {
+	background-color: var(--selection-bg);
+	color: var(--selection-text);
+}

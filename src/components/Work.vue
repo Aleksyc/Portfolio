@@ -83,7 +83,8 @@ const works = computed<Work[]>(() => [
     date: t('work.items.veolia.date'),
     details: [
       t('work.items.veolia.details.0'),
-      t('work.items.veolia.details.1')
+      t('work.items.veolia.details.1'),
+      t('work.items.veolia.details.2')
     ]
   }
 ])

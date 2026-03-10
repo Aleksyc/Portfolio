@@ -17,9 +17,9 @@
             <button
               type="button"
               @click="toggleLang"
-              class="inline-flex items-center gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-black/10"
+              class="inline-flex cursor-pointer items-center gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-all hover:bg-black/20 hover:scale-[1.02] active:scale-[0.98]"
             >
-              {{ locale.startsWith('fr') ? '🍵 EN' : '🗼 FR' }}
+              {{ locale.startsWith('fr') ? '🇬🇧 EN' : '🇫🇷 FR' }}
             </button>
             <a
               href="https://github.com/Aleksyc"

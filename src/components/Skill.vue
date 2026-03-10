@@ -59,18 +59,21 @@ const skills = ref<Skill[]>([
   { name: "HTML5", category: "frontend", image: new URL('../assets/technology/html5.png', import.meta.url).href },
   { name: "CSS3", category: "frontend", image: new URL('../assets/technology/css3.png', import.meta.url).href },
   { name: "Tailwind CSS", category: "frontend", image: new URL('../assets/technology/tailwindcss.png', import.meta.url).href },
+  { name: "Typescript", category: "frontend", image: new URL('../assets/technology/typescript.png', import.meta.url).href },
   { name: "Vue.js", category: "frontend", image: new URL('../assets/technology/vue.png', import.meta.url).href },
   { name: "Angular", category: "frontend", image: new URL('../assets/technology/angular.png', import.meta.url).href },
-  { name: "Typescript", category: "frontend", image: new URL('../assets/technology/typescript.png', import.meta.url).href },
   { name: "Node.js", category: "backend", image: new URL('../assets/technology/nodejs.png', import.meta.url).href },
   { name: "FastAPI", category: "backend", image: new URL('../assets/technology/fastapi.png', import.meta.url).href },
+  { name: "MongoDB", category: "backend", image: new URL('../assets/technology/mongodb.png', import.meta.url).href },
   { name: "PHP", category: "backend", image: new URL('../assets/technology/php.png', import.meta.url).href },
   { name: "API REST", category: "backend", image: new URL('../assets/technology/apirest.png', import.meta.url).href },
-  { name: "Python", category: "backend", image: new URL('../assets/technology/python.png', import.meta.url).href },
   { name: "SQL", category: "backend", image: new URL('../assets/technology/sql.png', import.meta.url).href },
   { name: "PostgreSQL", category: "backend", image: new URL('../assets/technology/postgresql.png', import.meta.url).href },
   { name: "Automation Anywhere", category: "other", image: new URL('../assets/technology/automationanywhere.png', import.meta.url).href },
+  { name: "Python", category: "other", image: new URL('../assets/technology/python.png', import.meta.url).href },
+  { name: "Java", category: "other", image: new URL('../assets/technology/java.png', import.meta.url).href },
   { name: "Apps Script", category: "other", image: new URL('../assets/technology/appsscript.png', import.meta.url).href },
+  { name: "Git", category: "other", image: new URL('../assets/technology/git.png', import.meta.url).href },
 ])
 
 </script>

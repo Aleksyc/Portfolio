@@ -1,7 +1,11 @@
 {
   "hero": {
     "greeting": "Salut c'est Alexis 👋",
-    "description": "Développeur Full Stack chez Veolia. Je crée des applications web, des API et des solutions."
+    "description": "Développeur Full Stack chez Veolia. Je crée des applications web, des API et des solutions logicielles.",
+    "switchToEnglish": "🇬🇧 EN",
+    "switchToFrench": "🇫🇷 FR",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
   },
   "work": {
     "title": "Expérience professionnelle",
@@ -11,9 +15,9 @@
         "subtitle": "Développeur Full Stack & RPA",
         "date": "Avr 2025 - Aujourd'hui",
         "details": [
-          "Développement de robots logiciels (RPA) avec Automation Anywhere pour automatiser les tâches comptables.",
-          "Développement full-stack d'une application web avec Angular et une API Node.js pour gérer et superviser les processus RPA.",
-          ""
+          "Développement de robots logiciels (RPA) avec Automation Anywhere et Google Apps Script pour automatiser des processus comptables.",
+          "Développement full-stack (Angular, Node.js) d'une application web permettant la supervision de processus RPA et la saisie de données comptables automatisées.",
+          "Maintenance d'un portail WordPress mettant à disposition des données et rapports financiers."
         ]
       }
     }
@@ -24,7 +28,14 @@
       "iut": {
         "title": "IUT du Littoral Côte d'Opale",
         "subtitle": "BUT Informatique",
-        "date": "Sep 2023 - Aujourd'hui"
+        "date": "Sep 2023 - Aujourd'hui",
+        "details": [
+          "Développement full-stack (HTML, CSS, JavaScript, PHP, Node.js)",
+          "Développment (PyQt, JavaFX) & architecture logicielle (MVC, Design Patterns)",
+          "Gestion base de données (SQL, PostgreSQL, MongoDB)",
+          "Gestion de projets (Git, Agile, Scrum)",
+          "Réseau et systèmes (Virtualisation, Modèles OSI et TCP/IP)"
+        ]
       },
       "ulco": {
         "title": "Université du Littoral Côte d'Opale",
