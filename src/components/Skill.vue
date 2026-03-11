@@ -1,5 +1,5 @@
 <template>
-  <section id="work" class="w-full mb-8">
+  <section id="skills" class="w-full mb-8">
     <div class="mx-auto w-full max-w-2xl flex min-h-0 flex-col gap-y-3">
       <div class="mb-1">
         <h2 class="text-xl font-bold">{{ t('skills.title') }}</h2>
@@ -9,19 +9,19 @@
     <div class="flex flex-wrap justify-center gap-3 mt-4">
       <label class="cursor-pointer">
       <input type="radio" name="skill-category" value="frontend" class="sr-only peer" v-model="selectedCategory">
-      <span class="inline-flex items-center justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring border border-input bg-background shadow-sm h-8 rounded-md text-xs px-4 py-2 hover:bg-black/10 peer-checked:bg-black peer-checked:text-white peer-checked:border-black peer-checked:hover:bg-black">
+      <span class="inline-flex items-center justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring border border-input bg-background h-8 rounded-md text-xs px-4 py-2 hover:bg-black/10 peer-checked:bg-black peer-checked:text-white peer-checked:border-black peer-checked:hover:bg-black">
         {{ t('skills.categories.frontend') }}
       </span>
       </label>
       <label class="cursor-pointer">
       <input type="radio" name="skill-category" value="backend" class="sr-only peer" v-model="selectedCategory">
-      <span class="inline-flex items-center justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring border border-input bg-background shadow-sm h-8 rounded-md text-xs px-4 py-2 hover:bg-black/10 peer-checked:bg-black peer-checked:text-white peer-checked:border-black peer-checked:hover:bg-black">
+      <span class="inline-flex items-center justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring border border-input bg-background h-8 rounded-md text-xs px-4 py-2 hover:bg-black/10 peer-checked:bg-black peer-checked:text-white peer-checked:border-black peer-checked:hover:bg-black">
         {{ t('skills.categories.backend') }}
       </span>
       </label>
       <label class="cursor-pointer">
       <input type="radio" name="skill-category" value="other" class="sr-only peer" v-model="selectedCategory">
-      <span class="inline-flex items-center justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring border border-input bg-background shadow-sm h-8 rounded-md text-xs px-4 py-2 hover:bg-black/10 peer-checked:bg-black peer-checked:text-white peer-checked:border-black peer-checked:hover:bg-black">
+      <span class="inline-flex items-center justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring border border-input bg-background h-8 rounded-md text-xs px-4 py-2 hover:bg-black/10 peer-checked:bg-black peer-checked:text-white peer-checked:border-black peer-checked:hover:bg-black">
         {{ t('skills.categories.other') }}
       </span>
       </label>
@@ -74,6 +74,7 @@ const skills = ref<Skill[]>([
   { name: "Java", category: "other", image: new URL('../assets/technology/java.png', import.meta.url).href },
   { name: "Apps Script", category: "other", image: new URL('../assets/technology/appsscript.png', import.meta.url).href },
   { name: "Git", category: "other", image: new URL('../assets/technology/git.png', import.meta.url).href },
+  { name: "Postman", category: "other", image: new URL('../assets/technology/postman.png', import.meta.url).href },
 ])
 
 </script>

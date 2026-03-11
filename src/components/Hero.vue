@@ -19,7 +19,26 @@
               @click="toggleLang"
               class="inline-flex cursor-pointer items-center gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-all hover:bg-black/20 hover:scale-[1.02] active:scale-[0.98]"
             >
-              {{ locale.startsWith('fr') ? '🇬🇧 EN' : '🇫🇷 FR' }}
+              <span v-if="locale.startsWith('fr')" class="flex items-center gap-2">
+                <!-- UK flag SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" class="h-4 w-4" aria-hidden="true" role="img">
+                  <rect width="60" height="30" fill="#012169"/>
+                  <path d="M0 0 L60 30 M60 0 L0 30" stroke="#fff" stroke-width="6"/>
+                  <path d="M0 0 L60 30 M60 0 L0 30" stroke="#C8102E" stroke-width="3"/>
+                  <path d="M30 0 L30 30 M0 15 L60 15" stroke="#fff" stroke-width="10"/>
+                  <path d="M30 0 L30 30 M0 15 L60 15" stroke="#C8102E" stroke-width="6"/>
+                </svg>
+                EN
+              </span>
+              <span v-else class="flex items-center gap-2">
+                <!-- FR flag SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" class="h-4 w-4" aria-hidden="true" role="img">
+                  <rect width="1" height="2" x="0" y="0" fill="#0055A4"/>
+                  <rect width="1" height="2" x="1" y="0" fill="#FFFFFF"/>
+                  <rect width="1" height="2" x="2" y="0" fill="#EF4135"/>
+                </svg>
+                FR
+              </span>
             </button>
             <a
               href="https://github.com/Aleksyc"
@@ -67,7 +86,7 @@
   </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 
 const { t, locale } = useI18n()

@@ -1,5 +1,5 @@
 <template>
-  <section id="work" class="w-full mb-8">
+  <section id="education" class="w-full mb-8">
     <div class="mx-auto w-full max-w-2xl flex min-h-0 flex-col gap-y-3">
       <div class="mb-1">
         <h2 class="text-xl font-bold">{{ t('education.title') }}</h2>
