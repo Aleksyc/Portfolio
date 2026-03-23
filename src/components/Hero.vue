@@ -78,7 +78,7 @@
         </div>
         <div>
           <span class="relative flex size-36 shrink-0 overflow-hidden rounded-full">
-            <img class="aspect-square h-full w-full" alt="Alexis" src="../assets/me.png" />
+            <img class="aspect-square h-full w-full" alt="Photo Alexis COCQUEREL" src="../assets/me.png" />
           </span>
         </div>
       </div>
