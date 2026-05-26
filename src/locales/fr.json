@@ -5,7 +5,8 @@
     "switchToEnglish": "🇬🇧 EN",
     "switchToFrench": "🇫🇷 FR",
     "github": "GitHub",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "but180": "Mon BUT en 180s"
   },
   "work": {
     "title": "Expérience professionnelle",
@@ -50,6 +51,22 @@
       "frontend": "Frontend",
       "backend": "Backend",
       "other": "Autres"
+    }
+  },
+  "projects": {
+    "title": "Projets",
+    "viewProject": "Voir le projet",
+    "items": {
+      "portfolio": {
+        "title": "Portfolio",
+        "subtitle": "Site personnel",
+        "date": "Juin 2026",
+        "details": [
+          "Création d'un portfolio personnel avec Vue 3 et TypeScript",
+          "Design responsive avec Tailwind CSS",
+          "Internationalisation (FR/EN) avec Vue I18n"
+        ]
+      }
     }
   }
 }

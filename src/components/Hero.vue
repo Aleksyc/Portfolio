@@ -44,7 +44,7 @@
               href="https://github.com/Aleksyc"
               target="_blank"
               rel="noreferrer"
-              class="inline-flex items-center gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-black/10"
+              class="inline-flex cursor-pointer items-center gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-all hover:bg-black/20 hover:scale-[1.02] active:scale-[0.98]"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +61,7 @@
               href="https://www.linkedin.com/in/alexis-cocquerel-04898a353/"
               target="_blank"
               rel="noreferrer"
-              class="inline-flex items-center gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-black/10"
+              class="inline-flex cursor-pointer items-center gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-all hover:bg-black/20 hover:scale-[1.02] active:scale-[0.98]"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -74,6 +74,22 @@
               </svg>
               LinkedIn
             </a>
+            <button
+              type="button"
+              @click="isButOpen = true"
+              class="inline-flex cursor-pointer items-center gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-all hover:bg-black/20 hover:scale-[1.02] active:scale-[0.98]"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="h-4 w-4"
+                aria-hidden="true"
+              >
+                <path d="M8 5.5v13l11-6.5-11-6.5z" />
+              </svg>
+              {{ t('hero.but180') }}
+            </button>
           </div>
         </div>
         <div>
@@ -84,12 +100,47 @@
       </div>
     </div>
   </section>
+
+  <teleport to="body">
+    <div
+      v-if="isButOpen"
+      class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Video Mon BUT"
+      @click.self="isButOpen = false"
+    >
+      <div class="relative w-full max-w-3xl overflow-hidden rounded-lg bg-white shadow-xl">
+        <button
+          type="button"
+          class="absolute right-3 top-3 inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-input bg-white text-lg leading-none transition-colors hover:bg-gray-200"
+          aria-label="Fermer"
+          @click="isButOpen = false"
+        >
+          x
+        </button>
+        <div class="aspect-video w-full">
+          <iframe
+            class="h-full w-full"
+            src="https://www.youtube.com/embed/3cT5Mb-ykhY?si=3lPW1RfQ-bfwDkBe"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </teleport>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { t, locale } = useI18n()
+const isButOpen = ref(false)
 
 function toggleLang() {
   locale.value = locale.value.startsWith('fr') ? 'en' : 'fr'
